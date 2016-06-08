@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html> -->
+<!DOCTYPE>
+<html lang="en">
+
+    <head>
+
+        {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        {% endblock %}
+
+        <title>{% block titulo %}Voluntários do Bem{% endblock %}</title>
+        
+        {% block style %}
+        <!-- Bootstrap Core CSS -->
+        <link href="/media/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/media/css/modern-business.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="/media/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        {% endblock %}
+
+       <!--  {% block sdkFacebook %}
+        <meta property="og:url"           content="http://127.0.0.1:8000/sobre/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="JCI - Voluntários do Bem" />
+        <meta property="og:description"   content="Banco de voluntários JCI" />
+        <meta property="og:image"         content="http://lorempixel.com/400/200/sports/1/" />
+        {% endblock %} -->
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- {% block facebook %}
+        <div id="fb-root"></div>
+        <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+        {% endblock %} -->
+
+        {% block nav %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="" href="/"><img src="/media/imgs/logo_536x468.png"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://blackrockdigital.github.io/startbootstrap-modern-business/" target="_blank">ORIGINAL</a>
+                        </li>
+                        <li>
+                            <a href="/sobre/">Quem somos</a>
+                        </li>
+                        <li>
+                            <a href="/contato/">Contato</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ações <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/acoes/" title="Ajudenos a melhorar Passo Fundo">Ações</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="/acoes-finalizadas/" title="Veja as nossas conquistas">Finalizadas</a>
+                                </li> -->
+                                <li>
+                                    <a href="/entidades/" title="Entidades que apoiamos">Entidades</a>
+                                </li>
+                                <li>
+                                    <a href="/calendario/" title="Conheça nosso calendário de ações">Calendário</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <<!-- li>
+                            <a href="/acoes/" title="Conheça nossas ações">Ações</a>
+                        </li> -->
+                        <li>
+                            <a href="/campanhas/">Campanhas</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="full-width.html">Full Width Page</a>
+                                </li>
+                                <li>
+                                    <a href="sidebar.html">Sidebar Page</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="404.html">404</a>
+                                </li>
+                                <li>
+                                    <a href="pricing.html">Pricing Table</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/parceiros/">Parceiros</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voluntariado <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/acoes/" title="Login">Login</a>
+                                </li>
+                                <li>
+                                    <a href="/cadastro-voluntario/" title="Torne-se um voluntáro">Cadastro</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        {% endblock %}
+
+        <!-- INICIO PÁGINA -->
+
+        {% block conteudo %} {% endblock %}
+
+
+        <!-- FIM PÁGINA -->
+            
+        {% block rodape %}
+        <hr>
+        <footer>
+            <div class="row">
+                <div>
+                    <p>Copyright &copy; Voluntários do Bem 2016 - v.1.0 </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="/media/js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/media/js/bootstrap.min.js"></script>
+
+        {% endblock %}
+
+    </body>
+
+</html>

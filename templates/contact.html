@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Contato - Voluntários do Bem{% endblock %}
+
+{% block conteudo %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contato</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d28114.49790029624!2d-52.40890378899667!3d-28.25854764169748!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1462159897254"></iframe>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Detalhes de Contato</h3>
+                <p>
+                    Rua Fim do Mundo<br>Bairro Onde Judas Perdeu as Botas, CEP: 99999-999<br>
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">Fone</abbr>: (##) 9999-99999</p>
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Email">E-mail</abbr>: <a href="mailto:name@example.com">email@email.com</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">Atendimento</abbr>: Segunda - Sexta: 9:00 às 18:00</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="https://www.facebook.com/jcipassofundo/" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Contact Form -->
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+
+        <!-- {% if stat %}
+            <h1>TRUE</h1>
+        {% else %}
+            <h1>FALSE</h1>
+        {% endif %} -->
+
+        <div class="row" id="message">
+            <div class="col-md-8">
+                <h3>Envie uma mensagem</h3>
+                <form action="/enviar-mensagem/" name="sendMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Nome completo:</label>
+                            <input type="text" name="nome" class="form-control" id="name" required data-validation-required-message="Por favor, ensira seu nome.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Número de telefone:</label>
+                            <input type="tel" name="telefone" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Endereço de E-mail:</label>
+                            <input type="email" name="email" class="form-control" id="email" required data-validation-required-message="Por favor, ensira seu endereço de e-mail. Ex: email@email.com">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Mensagem:</label>
+                            <textarea name="mensagem" rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Digite sua mensage." maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="media/js/jqBootstrapValidation.js"></script>
+    <script src="media/js/contact_me.js"></script>
+
+{% endblock %}

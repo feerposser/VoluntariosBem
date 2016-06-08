@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block titulo %}Cadastro - Voluntários do Bem{% endblock %}
+{% block conteudo %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Cadastro de voluntários<br>
+                    <small>Torne-se um voluntário</small>
+                </h1><!-- 
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Full Width Page</li>
+                </ol> -->
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+        <div class="row" id="message">
+            <div class="col-lg-12">
+                <h3>Formulário de cadastro</h3>
+                <form action="/enviar-mensagem/" name="sendMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Nome completo:</label>
+                            <input type="text" name="nome" class="form-control" id="name" required data-validation-required-message="Por favor, ensira seu nome.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Número de telefone:</label>
+                            <input type="tel" name="telefone" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Endereço de E-mail:</label>
+                            <input type="email" name="email" class="form-control" id="email" required data-validation-required-message="Por favor, ensira seu endereço de e-mail. Ex: email@email.com">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>*Mensagem:</label>
+                            <textarea name="mensagem" rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Digite sua mensage." maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Calendário de Ações - Voluntários do Bem{% endblock %}
+
+{% block conteudo %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Calendário de ações
+                    <!-- <small>Subheading</small> -->
+                </h1>
+                <ol class="breadcrumb">
+                    <li><small>Conheça nosso calendário de ações</small></li>
+                </ol>
+            </div>
+        </div>
+    <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                {% for cal in calendario %}
+                <h2>
+                    <p>{{cal.nome|safe}}</p>
+                </h2>
+                <!-- <p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p> -->
+                <p><i class="fa fa-clock-o"></i> Data da ação marcada para {{cal.data}}</p>
+                <a href="blog-post.html">
+                    <img class="img-responsive img-hover" style="width: 900px; height: 300px;" src="{{media_url}}{{cal.imagemCalendario}}" alt="{{cal.nome|safe}}">
+                </a>
+                <p style="margin-top: 30px;">
+                    {{cal.descricao|safe}}
+                </p>
+                <!-- <a class="btn btn-primary" href="">Read More <i class="fa fa-angle-right"></i></a> -->
+                <hr>
+
+                {% endfor %}
+
+                {% if paginacao.has_previous or paginacao.has_next %}
+                <hr>
+                <div class="row">
+                    <ul class="pager">
+                    {% if paginacao.has_previous %}
+                        <li class="previous"><a href="/calendario/pagina/{{paginacao.previous_page_number}}">&larr; Anterior</a></li>
+                    {% endif %}
+                    {% if paginacao.has_next %}
+                        <li class="next"><a href="/calendario/pagina/{{paginacao.next_page_number}}">Próxima &rarr;</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+                <hr>
+                {% endif %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Ações - Voluntários do Bem{% endblock %}
+
+{% block conteudo %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Ações<br>
+                    <small>Conheça as ações da JCI em Passo Fundo</small>
+                </h1>
+               <!--  <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Three Column Portfolio</li>
+                </ol> -->
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Projects Row -->
+
+        <div class="row">
+        {% for ac in acoes %}
+            <div class="col-md-4 img-portfolio">
+                <a href="/acoes/{{ac.url}}">
+                    {% if ac.imagemAcao %}
+                    <img class="img-responsive img-hover" style="width: 700px; height: 200px;" src="{{media_url}}{{ac.imagemAcao}}" alt="{{ac.nome}}">
+                    {% else %}
+                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
+                    {% endif %}
+                </a>
+                <h3>
+                    <a href="/acoes/{{ac.url}}">{{ac.nome|safe}}</a>
+                </h3>
+                <p>{{ac.descricao|safe|truncatechars:100}}</p>
+            </div>           
+        
+        {% endfor %} 
+        </div>
+
+        {% if paginacao.has_previous or paginacao.has_next %}
+
+        <hr>
+
+        <div class="row">
+            <ul class="pager">
+            {% if paginacao.has_previous %}
+                <li class="previous"><a href="/acoes/pagina/{{paginacao.previous_page_number}}">&larr; Anterior</a></li>
+            {% endif %}
+            {% if paginacao.has_next %}
+                <li class="next"><a href="/acoes/pagina/{{paginacao.next_page_number}}">Próxima &rarr;</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        {% endif %}
+
+    </div>
+
+</div>
+    <!-- /.container -->
+
+{% endblock %}

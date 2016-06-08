@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{acao.nome|safe}} - Voluntários do Bem {% endblock %}
+
+<!-- {% block sdkFacebook %} -->
+    <meta property="og:url"           content="{{acao.url}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{acao.nome}}" />
+    <meta property="og:description"   content="{{acao.conteudo}}" />
+    <meta property="og:image"         content="http://www.robolaranja.com.br/wp-content/uploads/2014/10/Primeira-imagem-do-filme-de-Angry-Birds-%C3%A9-revelada-2.jpg/" />
+<!-- {% endblock %} -->
+
+{% block conteudo %}
+
+<div id="fb-root"></div>
+        <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{acao.nome|safe}}</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            {% if acao.imagemAcao %}
+            <div class="col-md-8">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="img-responsive" style="width: 750px; height: 500px;" src="{{media_url}}{{acao.imagemAcao}}" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-4">
+                <h3>Quem São?</h3>
+                <p>{{acao.descricao|safe}}</p>
+                <p>{{acao.entidade.all}}</p>
+                <!--  <h3>Project Details</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul> -->
+               
+                <div class="fb-like" data-href="{{acao.url|safe}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <!-- <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Related Projects</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+        </div> -->
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+
+    </div>
+    <!-- /.container -->
+{% endblock %}
